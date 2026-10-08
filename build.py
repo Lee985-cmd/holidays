@@ -109,6 +109,7 @@ class Site:
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(canonical)}">
 <meta property="og:type" content="website">
+<meta name="msvalidate.01" content="93A3EF00926398559313DCA649D512A2">
 <link rel="stylesheet" href="/assets/style.css">
 {ld_html}
 </head>
