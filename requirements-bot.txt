@@ -1,3 +1,0 @@
-# Twitter 自动发帖脚本依赖（本地运行，不用于 Cloudflare 构建）
-playwright>=1.40
-schedule>=1.2
