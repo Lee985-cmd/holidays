@@ -164,7 +164,7 @@ def write_file(rel_path: str, content: str) -> None:
 # ---------------- 落地页 ----------------
 
 def newsletter_box(cta: str = "Get reminded") -> str:
-    action = os.environ.get("EMAIL_FORM_ACTION", "https://formsubmit.co/CHANGE_ME")
+    action = os.environ.get("EMAIL_FORM_ACTION", "https://formsubmit.co/376384019@qq.com")
     return f"""
 <form class="newsletter" id="newsletter" method="post" action="{esc(action)}">
 <input type="hidden" name="_subject" value="Newsletter subscription">
