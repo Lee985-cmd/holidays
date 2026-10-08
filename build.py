@@ -143,6 +143,7 @@ Data: <a href="https://date.nager.at" style="color:inherit">Nager.Date</a> (CC B
 Regional scope is shown on every holiday ·
 This site has no affiliation with any government.
 </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "da19370205a34e64ad141d7b37804f71"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
