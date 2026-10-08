@@ -1,7 +1,7 @@
 """静态站点生成器：年假优化器（Annual Leave Optimizer）。
 
 读取 data/ 的假期 JSON，归一化（见 long_weekend.normalize）后输出纯静态 HTML 到 out/。
-零第三方依赖。当前规模：2 国 × 2027 = 4 页 + 首页。
+零第三方依赖。当前规模：6 国 × 2027 = 12 页 + 首页。
 
 页面：
   /                                  落地页（含邮件订阅）
@@ -28,13 +28,13 @@ DATA_DIR = os.path.join(HERE, "data")
 OUT_DIR = os.path.join(HERE, "out")
 
 YEAR = 2027
-COUNTRIES_FOCUS = ["US", "GB"]
+COUNTRIES_FOCUS = ["US", "GB", "DE", "CA", "AU", "FR"]
 
 WEEKDAY_SHORT = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
                "July", "August", "September", "October", "November", "December"]
 
-# 一级行政区代码 → 可读名称（与 data/subdivisions.json 对应，仅当前 2 国需要时使用）
+# 一级行政区代码 → 可读名称（与 data/subdivisions.json 对应，仅当前 6 国需要时使用）
 REGION_NAMES: dict[str, str] = {
     "GB-ENG": "England", "GB-SCT": "Scotland", "GB-WLS": "Wales",
     "GB-NIR": "Northern Ireland",
@@ -54,6 +54,22 @@ REGION_NAMES: dict[str, str] = {
     "US-UT": "Utah", "US-VT": "Vermont", "US-VA": "Virginia", "US-WA": "Washington",
     "US-WV": "West Virginia", "US-WI": "Wisconsin", "US-WY": "Wyoming",
     "US-DC": "District of Columbia",
+    "DE-BW": "Baden-Württemberg", "DE-BY": "Bavaria", "DE-BE": "Berlin",
+    "DE-BB": "Brandenburg", "DE-HB": "Bremen", "DE-HH": "Hamburg",
+    "DE-HE": "Hesse", "DE-MV": "Mecklenburg-Vorpommern",
+    "DE-NI": "Lower Saxony", "DE-NW": "North Rhine-Westphalia",
+    "DE-RP": "Rhineland-Palatinate", "DE-SL": "Saarland", "DE-SN": "Saxony",
+    "DE-ST": "Saxony-Anhalt", "DE-SH": "Schleswig-Holstein",
+    "DE-TH": "Thuringia",
+    "CA-AB": "Alberta", "CA-BC": "British Columbia", "CA-MB": "Manitoba",
+    "CA-NB": "New Brunswick", "CA-NL": "Newfoundland and Labrador",
+    "CA-NS": "Nova Scotia", "CA-NT": "Northwest Territories",
+    "CA-NU": "Nunavut", "CA-ON": "Ontario", "CA-PE": "Prince Edward Island",
+    "CA-QC": "Quebec", "CA-SK": "Saskatchewan", "CA-YT": "Yukon",
+    "AU-ACT": "Australian Capital Territory", "AU-NSW": "New South Wales",
+    "AU-NT": "Northern Territory", "AU-QLD": "Queensland",
+    "AU-SA": "South Australia", "AU-TAS": "Tasmania", "AU-VIC": "Victoria",
+    "AU-WA": "Western Australia",
 }
 
 
@@ -218,7 +234,8 @@ def build_home(site: Site) -> list[str]:
 {newsletter_box()}
 """
     desc = (f"Annual leave optimizer for {YEAR}: exact bridge days to book so 1-3 days of "
-            f"leave become up to {headline_days} consecutive days off. US and UK guides.")
+            f"leave become up to {headline_days} consecutive days off. "
+            f"US, UK, Germany, Canada, Australia and France guides.")
     write_file("index.html", site.page(
         title=f"Annual Leave Optimizer {YEAR} - Bridge Days Calculator",
         desc=desc, path="/", body=body,
