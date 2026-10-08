@@ -456,7 +456,7 @@ def main() -> None:
     default_url = (
         os.environ.get("SITE_URL")
         or os.environ.get("CF_PAGES_URL")
-        or "http://localhost:8765"
+        or "https://holidays-e88.pages.dev"
     )
     ap.add_argument("--site-url", default=default_url)
     args = ap.parse_args()
