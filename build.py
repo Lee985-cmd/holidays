@@ -445,6 +445,10 @@ def copy_assets() -> None:
     if os.path.isdir(dst):
         shutil.rmtree(dst)
     shutil.copytree(os.path.join(HERE, "assets"), dst)
+    # Cloudflare Pages 头文件（缓存策略）
+    headers_src = os.path.join(HERE, "_headers")
+    if os.path.exists(headers_src):
+        shutil.copy(headers_src, os.path.join(OUT_DIR, "_headers"))
 
 
 def main() -> None:

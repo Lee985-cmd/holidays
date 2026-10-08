@@ -1,0 +1,12 @@
+# 复制此文件到 out/_headers（build.py 暂不自动处理，手动或 Cloudflare 自定义域配置）
+/*
+  Cache-Control: public, max-age=600
+
+/assets/*
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
