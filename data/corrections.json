@@ -1,0 +1,35 @@
+{
+  "_comment": "官方源核对后对 Nager.Date 数据的校正（先 remove 再 add，之后重新归一化）。键格式 CC_YEAR。每次核对官方源后更新，页面 footer 有官方源声明。",
+  "JP_2027": {
+    "remove": [],
+    "add": [
+      {
+        "date": "2027-03-22",
+        "localName": "振替休日",
+        "name": "Vernal Equinox Day (substitute day)",
+        "countryCode": "JP",
+        "global": true,
+        "counties": null,
+        "types": ["Public"]
+      }
+    ],
+    "_source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv — 春分の日 3/21 为周日，次日 3/22 为振替休日，Nager 漏录"
+  },
+  "GB_2027": {
+    "remove": [
+      {"date": "2027-01-02", "name": "2 January"}
+    ],
+    "add": [
+      {
+        "date": "2027-01-04",
+        "localName": "2 January (substitute day)",
+        "name": "2 January (substitute day)",
+        "countryCode": "GB",
+        "global": false,
+        "counties": ["GB-SCT"],
+        "types": ["Public"]
+      }
+    ],
+    "_source": "https://www.gov.uk/bank-holidays.json — 苏格兰 1/2 法定日落周六，依法顺延至周一 1/4，Nager 错放在 1/2"
+  }
+}

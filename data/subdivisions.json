@@ -1,0 +1,21 @@
+{
+  "_comment": "一级行政区 ISO 3166-2 代码（Nager.Date counties 使用的格式）。用于判定 global=False 但事实上覆盖全国的假期。手工维护，扩国时同步补充。",
+  "GB": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"],
+  "US": [
+    "US-AL", "US-AK", "US-AZ", "US-AR", "US-CA", "US-CO", "US-CT", "US-DE",
+    "US-FL", "US-GA", "US-HI", "US-ID", "US-IL", "US-IN", "US-IA", "US-KS",
+    "US-KY", "US-LA", "US-ME", "US-MD", "US-MA", "US-MI", "US-MN", "US-MS",
+    "US-MO", "US-MT", "US-NE", "US-NV", "US-NH", "US-NJ", "US-NM", "US-NY",
+    "US-NC", "US-ND", "US-OH", "US-OK", "US-OR", "US-PA", "US-RI", "US-SC",
+    "US-SD", "US-TN", "US-TX", "US-UT", "US-VT", "US-VA", "US-WA", "US-WV",
+    "US-WI", "US-WY", "US-DC"
+  ],
+  "JP": [
+    "JP-01", "JP-02", "JP-03", "JP-04", "JP-05", "JP-06", "JP-07", "JP-08",
+    "JP-09", "JP-10", "JP-11", "JP-12", "JP-13", "JP-14", "JP-15", "JP-16",
+    "JP-17", "JP-18", "JP-19", "JP-20", "JP-21", "JP-22", "JP-23", "JP-24",
+    "JP-25", "JP-26", "JP-27", "JP-28", "JP-29", "JP-30", "JP-31", "JP-32",
+    "JP-33", "JP-34", "JP-35", "JP-36", "JP-37", "JP-38", "JP-39", "JP-40",
+    "JP-41", "JP-42", "JP-43", "JP-44", "JP-45", "JP-46", "JP-47"
+  ]
+}
