@@ -21,7 +21,7 @@ API_BASE = "https://date.nager.at/api/v3"
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(HERE, "data")
 
-DEFAULT_COUNTRIES = ["US", "GB", "JP"]
+DEFAULT_COUNTRIES = ["US", "GB"]
 DEFAULT_YEARS = [2025, 2026, 2027]
 
 
