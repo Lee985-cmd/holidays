@@ -9,3 +9,6 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Twitter bot (login state cookies, never commit)
+twitter_profile/
