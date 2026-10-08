@@ -453,11 +453,12 @@ def copy_assets() -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    default_url = (
-        os.environ.get("SITE_URL")
-        or os.environ.get("CF_PAGES_URL")
-        or "https://holidays-e88.pages.dev"
-    )
+    # NOTE: CF_PAGES_URL is intentionally ignored — it carries a per-deploy
+    # hash prefix (e.g. https://078c5871.holidays-e88.pages.dev) which would
+    # make sitemap URLs unstable across deployments. Prefer the explicit
+    # SITE_URL env var (set in Cloudflare Pages if the production domain
+    # changes), otherwise fall back to the stable production domain.
+    default_url = os.environ.get("SITE_URL") or "https://holidays-e88.pages.dev"
     ap.add_argument("--site-url", default=default_url)
     args = ap.parse_args()
     site = Site(args.site_url)
